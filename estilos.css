@@ -1,86 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(to bottom, #ffe6ec, #ffc2d1);
-  overflow: hidden;
-  height: 100vh;
-}
-
-.form-container {
-  background-color: rgba(255, 255, 255, 0.95);
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #ffd1dc, #ffe6f0);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
   position: relative;
-  z-index: 1;
+  overflow: hidden;
 }
 
 h1 {
+  font-size: 22px;
+  color: #e6005c;
+  font-weight: 700;
+  margin-bottom: 5px;
   text-align: center;
-  color: #d6336c;
-  margin-bottom: 10px;
-  font-size: 28px;
 }
 
 p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
   text-align: center;
-  color: #555;
-  margin-bottom: 25px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 340px;
+  z-index: 10;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 2px solid #ffc2d1;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 15px;
+  outline: none;
+  font-size: 14px;
 }
 
 button {
   width: 100%;
-  padding: 12px;
-  background-color: #d6336c;
+  background-color: #ff4d88;
   color: white;
+  padding: 10px;
+  font-size: 15px;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #a61e4d;
+  background-color: #e6005c;
 }
 
-/* corações animados */
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: url('https://i.imgur.com/QpEaJQF.png') no-repeat center;
-  background-size: contain;
-  animation: float 10s linear infinite;
-  z-index: 0;
-  opacity: 0.3;
+/* corações flutuando */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.imgur.com/FyIU6q8.png');
+  background-repeat: repeat;
+  animation: float 20s linear infinite;
+  opacity: 0.2;
+  z-index: 1;
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(100vh) scale(1);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(-10vh) scale(1.5);
-    opacity: 0;
-  }
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
+}
+
+input, button {
+  position: relative;
+  z-index: 2;
+}
+
+h1, p, form {
+  z-index: 2;
+  position: relative;
 }
