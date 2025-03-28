@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Bonito</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Bem-vindo, gatinho! ❤️</h1>
+    <p>Por favor, preencha o formulário abaixo.</p>
+    <form action="processa.php" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="idade" placeholder="Idade" required>
+        <input type="text" name="cidade" placeholder="Cidade" required>
+        <input type="text" name="estado" placeholder="Estado" required>
+        <button type="submit" onclick="playSound()">Cadastrar</button>
+    </form>
+</div>
+
+<audio id="clickSound">
+    <source src="click.mp3" type="audio/mp3">
+</audio>
+
+<div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</div>
+
+<script>
+function playSound() {
+    document.getElementById('clickSound').play();
+}
+</script>
+
+</body>
+</html>
