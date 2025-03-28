@@ -1,83 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: linear-gradient(to bottom, #ffe6ec, #ffc2d1);
+  overflow: hidden;
+  height: 100vh;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    text-align: center;
-    width: 90%;
-    max-width: 500px;
+.form-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-    color: #ff5c7c;
-    margin-bottom: 15px;
-    font-size: 28px;
+  text-align: center;
+  color: #d6336c;
+  margin-bottom: 10px;
+  font-size: 28px;
 }
 
 p {
-    color: #333;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 2px solid #ffafbd;
-    border-radius: 10px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 2px solid #ffc2d1;
+  border-radius: 8px;
+  font-size: 15px;
 }
 
 button {
-    background-color: #ff5c7c;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+  width: 100%;
+  padding: 12px;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #e14e6b;
+  background-color: #a61e4d;
 }
 
-/* Corações flutuantes suaves e delicados no fundo */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://i.imgur.com/6Q7RzZR.png');
-    background-repeat: repeat;
-    animation: float 10s linear infinite;
-    opacity: 0.3;
+/* corações animados */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://i.imgur.com/QpEaJQF.png') no-repeat center;
+  background-size: contain;
+  animation: float 10s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
 }
 
 @keyframes float {
-    0% { background-position: 0 0; }
-    100% { background-position: 200px 200px; }
-form, input, button {
-  position: relative;
-  z-index: 10;
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
 }
