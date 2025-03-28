@@ -77,4 +77,7 @@ body::before {
 @keyframes float {
     0% { background-position: 0 0; }
     100% { background-position: 200px 200px; }
+form, input, button {
+  position: relative;
+  z-index: 10;
 }
