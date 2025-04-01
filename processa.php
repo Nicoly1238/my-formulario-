@@ -1,15 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "1234";
-$dbname = "loja_virtual";
+$host = "localhost";
+$user = "root";
+$senha = "1234";
+$banco = "loja_virtual";
 
-// Cria conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Conexão
+$conn = new mysqli($host, $user, $senha, $banco);
 
-// Verifica conexão
+// Verifica a conexão
 if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+    die("Erro na conexão: " . $conn->connect_error);
 }
 
 // Pega os dados do formulário
@@ -19,13 +19,12 @@ $idade = $_POST['idade'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 
-// Prepara o SQL
-$sql = "INSERT INTO clientes (nome, email, idade, cidade, estado)
-VALUES ('$nome', '$email', '$idade', '$cidade', '$estado')";
+// Insere no banco
+$sql = "INSERT INTO clientes (nome, email, idade, cidade, estado) 
+        VALUES ('$nome', '$email', '$idade', '$cidade', '$estado')";
 
-// Executa e mostra resultado
 if ($conn->query($sql) === TRUE) {
-    echo "<h2 style='color: #e14e6b; text-align: center; font-family: Poppins, sans-serif; margin-top: 50px;'>Awn! Obrigada por preencher, gatinho! Seus dados foram salvos com sucesso!</h2>";
+    echo "Cadastro realizado com sucesso!";
 } else {
     echo "Erro: " . $sql . "<br>" . $conn->error;
 }
